@@ -123,17 +123,17 @@ class JsonInterfaces.elements.ScalarElement extends JsonInterfaces.elements.Base
         for result in results
           @errors = @errors.concat(result)
 
-        $(@).triggerHandler "errors", [@errors]
+        $(@).triggerHandler "errors", [@errors || []]
         callback.call(@, @errors)
     else
-      $(@).triggerHandler "errors", []
+      $(@).triggerHandler "errors", [[]]
       callback.call(@, [])
 
   validate: (done)->
     @conditionMet (result)=>
       return unless result
       @getErrors (errors)=>
-        $(@).triggerHandler "validate", [errors]
+        $(@).triggerHandler "validate", [errors || []]
         done(errors) if typeof done is "function"
 
   getElName: ->

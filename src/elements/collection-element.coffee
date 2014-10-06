@@ -50,7 +50,7 @@ class JsonInterfaces.elements.CollectionElement extends JsonInterfaces.elements.
     element.on "validate", (event, errors)=>
       @errorsKeyed[element.getName()] = errors
       @errors = @createErrorArray(@errorsKeyed)
-      $(@).triggerHandler("validate", [@errors, @errorsKeyed])
+      $(@).triggerHandler("validate", [@errors || [], @errorsKeyed || {}])
 
     #update value of element change
     unless element.noValue
@@ -194,5 +194,5 @@ class JsonInterfaces.elements.CollectionElement extends JsonInterfaces.elements.
     @conditionMet (result)=>
       return if result is false
       @getErrors =>
-        $(@).triggerHandler("validate", [@errors, @errorsKeyed])
+        $(@).triggerHandler("validate", [@errors || [], @errorsKeyed || {}])
         done.call(@, @errors) if typeof done is "function"

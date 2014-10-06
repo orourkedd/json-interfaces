@@ -1,13 +1,12 @@
 class JsonInterfaces.Factory
 
   @build: (options)->
-    options = $.extend
+    defaults =
       type: JsonInterfaces.elements.CollectionElement
       elements: []
-    , options
 
+    options = $.extend(defaults, options)
     options.elements = @buildElements(options.elements)
-
     type = @getType(options.type)
     delete options.type
 
