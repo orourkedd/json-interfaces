@@ -1,0 +1,10 @@
+.form-group
+  label(rv-for="options.name", data-show="options.label") {options.label}
+  p.help-block(data-show="options.help") {options.help}
+
+  label(class="radio-inline" rv-each-option="options.options")
+    input(type="radio" rv-name="element#getElName" rv-value="option.value" rv-checked="element:value")
+    span {option.label}
+
+  .error-wrapper
+    .error(rv-each-error="element.errors" class="alert alert-danger shake animated") {error}

@@ -1,0 +1,1 @@
+JsonInterfaces.templates.oneColumnLayout = '<form novalidate="novalidate" class="one-column-layout"><div class="errors"><div rv-each-error="layout.errors" class="error alert alert-danger">{error}</div></div><div class="elements"></div></form>'

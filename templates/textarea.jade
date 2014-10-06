@@ -1,0 +1,6 @@
+.form-group
+  label(rv-for="options.name", data-show="options.label") {options.label}
+  p.help-block(data-show="options.help") {options.help}
+  textarea(class="form-control" rv-name="element#getElName" rv-id="element#getElId" rv-value="element:value")
+  .error-wrapper
+    .error(rv-each-error="element.errors" class="alert alert-danger shake animated") {error}

@@ -1,0 +1,1 @@
+JsonInterfaces.templates.address = '<div class="address-wrapper"><div id="address-region"></div><div class="row"><div class="col-md-5"><div id="city-region"></div></div><div class="col-md-5"><div id="state-region"></div></div><div class="col-md-2"><div id="zip-region"></div></div></div></div>'

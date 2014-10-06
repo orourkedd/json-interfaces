@@ -1,0 +1,236 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demo</title>
+
+  <style type="text/css">
+    .form-control.error {
+      border: 1px solid red;
+      margin-bottom: 5px;
+    }
+  </style>
+
+  <link rel="stylesheet" type="text/css" href="../bower_components/animate.css/animate.css">
+  <script src="../bower_components/validator-js/validator.js"></script>
+  <script src="../bower_components/async/lib/async.js"></script>
+  <script src="../bower_components/jquery/dist/jquery.js"></script>
+  <script src="../bower_components/rivets/dist/rivets.js"></script>
+  <script src="../lib/json-interfaces.js"></script>
+  <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css" type="text/css"/>
+
+  <script>
+    $(function(){
+
+      //Demo 1
+      var textfield = new JsonInterfaces.elements.Textfield({
+        name: "demo1",
+        $el: $("#demo1"),
+        label: "Demo Textfield",
+        help: "This is a sample help block"
+      })
+
+      textfield.on("change", function(event, value){
+        console.log("Demo 1: " + value);
+      });
+
+      textfield.render()
+
+      //Demo 2
+      var config2 = {
+        name: "demo2",
+        elements: [
+          {
+            name: "firstName",
+            label: "First Name",
+            help: "Please enter your first name.",
+            required: true
+          },
+          {
+            name: "lastName",
+            label: "Last Name",
+            help: "Please enter your last name.",
+            required: true,
+            condition: {
+              firstName: "Frankie"
+            }
+          },
+          {
+            type: JsonInterfaces.elements.Select,
+            name: "gender",
+            label: "Gender",
+            options: {
+              male: 'Male',
+              female: 'Female'
+            }
+          },
+          {
+            name: "submit",
+            value: "Send",
+            type: JsonInterfaces.elements.Submit
+          }
+        ]
+      }
+
+      var demo2 = JsonInterfaces.Factory.build(config2)
+
+      demo2.render($("#demo2"));
+
+      demo2.on("submit", function(event, value){
+        console.log("Demo 2 Submit");
+        console.log(value);
+      });
+
+      demo2.on("change", function(event, value){
+        console.log("Demo 2 Change");
+        console.log(value);
+      });
+
+      //Demo 3
+      var firstName3 = new JsonInterfaces.elements.Textfield({
+        name: "firstName",
+        label: "First Name",
+        help: "Please enter your first name.",
+        validators: [
+          function(value, parentElement, done){
+            if(value) {
+              done()
+            }
+            else {
+              done(this.options.label + " is required.");
+            }
+          }
+        ]
+      });
+
+      var lastName3 = new JsonInterfaces.elements.Textfield({
+        name: "lastName",
+        label: "Last Name",
+        help: "Please enter your last name."
+      });
+
+      var memo3 = new JsonInterfaces.elements.Textarea({
+        name: "memo",
+        label: "Memo",
+        validators: [
+          function(value, parentElement, done){
+            if(value) {
+              done()
+            }
+            else {
+              done(this.options.label + " is required.");
+            }
+          }
+        ]
+      });
+
+      var submit3 = new JsonInterfaces.elements.Submit({
+        value: "Save"
+      });
+
+      var collection3 = new JsonInterfaces.elements.CollectionElement({
+        name: "demo3",
+        layout: JsonInterfaces.layouts.TemplateLayout,
+        template: $("#demo3-template").html(),
+        elements: [firstName3, lastName3, memo3, submit3]
+      });
+
+      collection3.render($("#demo3"));
+
+      collection3.on("submit", function(event, value){
+        console.log("Demo 3 Submit");
+        console.log(value);
+      });
+
+      var collection4 = JsonInterfaces.Factory.build({
+        name: 'user-profile',
+        elements: {
+          header: {
+            type: 'Html',
+            html: "<h3>This is an HTML header</h3>"
+          },
+          name: {
+            label: "Name",
+            required: true
+          },
+          email: {
+            label: "Your Email",
+            type: 'Email'
+          },
+          gender: {
+            type: "Radio",
+            label: "Gender",
+            required: true,
+            options: [
+              {label: "Male", value: "male"},
+              {label: "Female", value: "female"}
+            ]
+          },
+          password: 'Password',
+          address: 'Address',
+          submit: 'Submit'
+        }
+      });
+
+      collection4.render($("#demo4"));
+
+      collection4.on("submit", function(event, values){
+        console.log("Demo 4 submit");
+        console.log(values);
+      });
+
+      collection4.on("change", function(event, values){
+        console.log("Demo 4 change");
+        console.log(values);
+      });
+
+    //jquery close
+    });
+
+  </script>
+</head>
+<body>
+<div class="container">
+  <h1 class="h3">Demo 1 - Single Field</h1>
+  <hr>
+  <div id="demo1"></div>
+</div>
+
+<div class="container">
+  <h1 class="h3">Demo 2 - Collection Element</h1>
+  <hr>
+  <div id="demo2"></div>
+
+  <h1 class="h3">Demo 3 - Template Layout</h1>
+  <hr>
+  <div id="demo3"></div>
+
+  <h1 class="h3">Demo 4 - Address Field</h1>
+  <hr>
+  <div id="demo4"></div>
+</div>
+
+<div style="display: none">
+  <div id="demo3-template">
+    <div class="errors">
+      <div class="error alert alert-danger" rv-each-error="element.errors" class="alert alert-danger">{error}</div>
+    </div>
+    <form novalidate>
+      <div class="row">
+        <div class="col-md-6" id="first-name-region"></div>
+        <div class="col-md-6" id="last-name-region"></div>
+      </div>
+      <div class="row">
+        <div class="col-md-12" id="memo-region"></div>
+      </div>
+      <div class="row">
+        <div class="col-md-12" id="submit-region"></div>
+      </div>
+    </form>
+  </div>
+</div>
+
+</body>
+</html>
