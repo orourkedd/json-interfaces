@@ -9,14 +9,20 @@ class JsonInterfaces.elements.Radio extends JsonInterfaces.elements.ScalarElemen
 
     super options
 
+  normalizeValueForSet: (keypath, value)->
+    value = super(keypath, value)
+    if @options.boolean
+      value.value = if value.value is "true" then true else false
+    value
+
   processOptions: (elementOptions, options, placeholder)->
     if elementOptions.boolean is true
       return [
         label: 'Yes'
-        value: 1
+        value: 'true'
       ,
         label: 'No'
-        value: 0
+        value: 'false'
       ]
 
     return options if $.isArray(options)
