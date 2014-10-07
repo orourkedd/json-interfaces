@@ -83,7 +83,10 @@ class JsonInterfaces.elements.ScalarElement extends JsonInterfaces.elements.Base
 
   render: ($el)->
     @options.$el = $el if $el
-    @options.$el.html(@options.template)
+
+    #get template from function if provided
+    template = if typeof @options.template is "function" then @options.template() else @options.template
+    @options.$el.html(template)
     @bindRivets()
 
   bindRivets: ->

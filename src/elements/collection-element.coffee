@@ -142,9 +142,10 @@ class JsonInterfaces.elements.CollectionElement extends JsonInterfaces.elements.
 
   render: ($el)->
     @options.$el = $el if $el
+    template = if typeof @options.template is "function" then @options.template() else @options.template
     @layout = new @options.layout
       element: @
-      template: @options.template
+      template: template
 
     @layout.render(@options.$el)
 

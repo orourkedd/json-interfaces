@@ -18,7 +18,8 @@ class JsonInterfaces.layouts.OneColumnLayout
 
     @options.$el = $el if $el
     throw new Error('@options.$el not set') unless @options.$el
-    @options.$el.html(@options.template)
+    template = if typeof @options.template is "function" then @options.template() else @options.template
+    @options.$el.html(template)
 
     @view = rivets.bind(@options.$el, {
       layout: @
