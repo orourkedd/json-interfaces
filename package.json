@@ -1,6 +1,6 @@
 {
   "name": "json-interfaces",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "devDependencies": {
     "chai": "^1.9.1",
     "coffee-script": "^1.8.0",

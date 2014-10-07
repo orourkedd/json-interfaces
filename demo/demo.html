@@ -163,10 +163,19 @@
             type: "Radio",
             label: "Gender",
             required: true,
-            options: [
-              {label: "Male", value: "male"},
-              {label: "Female", value: "female"}
-            ]
+            options: "Male:male,Female:female"
+          },
+          pcMac: {
+            type: "Radio",
+            label: "PC or Mac",
+            required: true,
+            options: "PC:pc,Mac:mac"
+          },
+          booleanTest: {
+            type: "Radio",
+            label: "Yes or No",
+            required: true,
+            boolean: true
           },
           password: 'Password',
           address: 'Address',
