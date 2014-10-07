@@ -1,1 +1,1 @@
-JsonInterfaces.templates.submit = '<div class="form-group"><input type="submit" rv-name="element#getElName" rv-id="element#getElId" rv-value="options.value" class="btn btn-primary"/></div>'
+JsonInterfaces.templates.submit = '<div rv-show="element.show" class="form-group"><input type="submit" rv-name="element#getElName" rv-id="element#getElId" rv-value="options.value" class="btn btn-primary"/></div>'

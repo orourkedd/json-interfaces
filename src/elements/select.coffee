@@ -2,7 +2,17 @@ class JsonInterfaces.elements.Select extends JsonInterfaces.elements.ScalarEleme
 
   constructor: (options)->
     options.template = JsonInterfaces.templates.select unless options.template
-    options.options = @processOptions(options.options, options.placeholder)
+
+    if options.range
+      options.options = @processRangeOptions(options)
+    else
+      options.options = @processOptions(options.options)
+
+    if options.placeholder
+      options.options.unshift
+        label: options.placeholder
+        value: null
+
     super options
 
     $(@).on "errors", (event, errors)=>
@@ -15,23 +25,22 @@ class JsonInterfaces.elements.Select extends JsonInterfaces.elements.ScalarEleme
   select: ->
     $('select', @options.$el)
 
-  processOptions: (options, placeholder)->
-    if $.isArray(options)
-      if placeholder
-        options.unshift
-          label: placeholder
-          value: null
-      return options
+  processRangeOptions: (options)->
+    throw new Error('No range options') unless options.range
+    rangeValues = []
+    start = options.start || 0
+    for i in [options.range[0]..options.range[1]]
+      rangeValues.push {value: i + start, label: i + start}
+
+    return if options.reverse then rangeValues.reverse() else rangeValues
+
+  processOptions: (options)->
+    return options if $.isArray(options)
 
     processed = []
     for value, label of options
       processed.push
         label: label
         value: value
-
-    if placeholder
-      processed.unshift
-        label: placeholder
-        value: null
 
     processed

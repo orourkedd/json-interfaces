@@ -108,10 +108,13 @@ class JsonInterfaces.elements.CollectionElement extends JsonInterfaces.elements.
       continue if existingValue[i] is @value[i] and not options.updateAll
       changed = true
 
-      #if this value has changed, set it on the element
-      @setValueOnElement(i, v)
+      element = @getElement(i)
 
-      $(@).trigger("change:" + i, [v, @getElement(i)]) if options.events
+      if element
+        #if this value has changed, set it on the element
+        @setValueOnElement(i, v)
+
+        $(@).trigger("change:" + i, [v, element]) if options.events
 
     @ignoreElementChangeEvents = false
 
@@ -132,7 +135,7 @@ class JsonInterfaces.elements.CollectionElement extends JsonInterfaces.elements.
     for element in @elements
       return element if element.getName() is name
 
-    throw new Error("element '#{name}' not found")
+    null
 
   getElements: ->
     @elements

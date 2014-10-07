@@ -4,6 +4,7 @@ class JsonInterfaces.elements.Date extends JsonInterfaces.elements.Textfield
     options.template = JsonInterfaces.templates.date unless options.template
 
     options.validators.push (value, parentElement, done)->
+      return done() unless value
       done("Please enter a valid date." unless validator.isDate(value))
 
     super options
