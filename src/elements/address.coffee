@@ -3,23 +3,23 @@ class JsonInterfaces.elements.Address extends JsonInterfaces.elements.Collection
   constructor: (options)->
     options.layout = JsonInterfaces.layouts.TemplateLayout unless options.layout
     options.template = JsonInterfaces.templates.address unless options.template
-    options.elements = @buildAddressElements(options.elements)
+    options.elements = @buildAddressElements(options, options.elements)
     super options
 
-  buildAddressElements: (elements = {})->
+  buildAddressElements: (options, elements = {})->
     options = $.extend
       address:
         label: "Street Address"
-        required: true
+        required: options.required
       city:
         label: "City"
-        required: true
+        required: options.required
       state:
         type: JsonInterfaces.elements.State
-        required: true
+        required: options.required
       zip:
         label: "Zip"
-        required: true
+        required: options.required
       , elements
 
     JsonInterfaces.Factory.buildElements(options)

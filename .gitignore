@@ -33,3 +33,5 @@ node_modules
 
 .DS_Store
 tmp
+
+json-interfaces.sublime-project

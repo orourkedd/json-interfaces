@@ -91,7 +91,7 @@ class JsonInterfaces.elements.CollectionElement extends JsonInterfaces.elements.
     # For: element.set(keypath, "someval")
     # this could be used to set other values on @value.  Could be used for something.
     # keypath is defined, value is defined
-    return @setKeyPath(keypath, value) unless typeof value is "undefined"
+    return @setKeyPath(keypath, value, options) unless typeof value is "undefined"
 
     # For: element.set({value: "someval"})
     value = keypath
@@ -121,10 +121,10 @@ class JsonInterfaces.elements.CollectionElement extends JsonInterfaces.elements.
     #trigger change event if any properties have changed
     $(@).trigger("change", [@value]) if changed and options.events
 
-  setKeyPath: (keypath, value)->
+  setKeyPath: (keypath, value, options = {})->
     obj = {}
     obj[keypath] = value
-    @set(obj)
+    @set(obj, undefined, options)
 
   setValueOnElement: (key, value)->
     element = @getElement(key)
@@ -134,7 +134,6 @@ class JsonInterfaces.elements.CollectionElement extends JsonInterfaces.elements.
   getElement: (name)->
     for element in @elements
       return element if element.getName() is name
-
     null
 
   getElements: ->

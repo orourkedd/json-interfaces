@@ -1,4 +1,4 @@
-class JsonInterfaces.elements.Password extends JsonInterfaces.elements.ScalarElement
+class JsonInterfaces.elements.Password extends JsonInterfaces.elements.Textfield
 
   constructor: (options)->
     options = $.extend

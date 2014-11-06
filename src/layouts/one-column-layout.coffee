@@ -5,12 +5,19 @@ class JsonInterfaces.layouts.OneColumnLayout
     throw new Error('fields required') unless @options.element.getElements()
     @elements = @options.element.getElements()
     @options.template = JsonInterfaces.templates.oneColumnLayout unless @options.template
+    @errors = []
 
   elementsEl: ->
     $("> form.one-column-layout > .elements", @options.$el)
 
   errorsEl: ->
     $("> form.one-column-layout > .errors", @options.$el)
+
+  clearErrors: ->
+    @errors = []
+
+  addError: (message)->
+    @errors.push message
 
   render: ($el)->
     #@options.element.on "validate", (event, errors)=>

@@ -10,3 +10,9 @@ class JsonInterfaces.elements.Submit extends JsonInterfaces.elements.ScalarEleme
       , options
 
     super options
+
+  afterRender: ->
+    @input().addClass(@options.classes)
+
+  input: ->
+    $('input', @options.$el)

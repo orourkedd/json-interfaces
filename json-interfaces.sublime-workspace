@@ -1,0 +1,567 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"email",
+				"emailTemplates"
+			],
+			[
+				"change",
+				"changeCase"
+			],
+			[
+				"emailTemplat",
+				"emailTemplateDelete"
+			],
+			[
+				"Ema",
+				"EmailTemplateController"
+			],
+			[
+				"con",
+				"controllerClass"
+			],
+			[
+				"mount",
+				"mountController"
+			],
+			[
+				"cont",
+				"controllerClass"
+			],
+			[
+				"Cont",
+				"controllerClass"
+			],
+			[
+				"toJ",
+				"toJSON"
+			],
+			[
+				"toJso",
+				"toJSONClean"
+			],
+			[
+				"res",
+				"response"
+			],
+			[
+				"com",
+				"completeField"
+			],
+			[
+				"man",
+				"mandrill_client"
+			],
+			[
+				"padding",
+				"padding-bottom"
+			],
+			[
+				"paddi",
+				"padding-bottom"
+			],
+			[
+				"list-st",
+				"list-style-type"
+			],
+			[
+				"messa",
+				"messagesUi"
+			],
+			[
+				"d",
+				"deferred"
+			],
+			[
+				"asyn",
+				"asyncCallback"
+			],
+			[
+				"thread",
+				"threadFactory"
+			],
+			[
+				"pro",
+				"prototype"
+			],
+			[
+				"acce",
+				"access_token"
+			],
+			[
+				"Auth",
+				"authenticating"
+			],
+			[
+				"app",
+				"appHref"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 187.0,
+		"selected_items":
+		[
+			[
+				"java",
+				"Coffee: Display JavaScript"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"lint",
+				"Coffee: Lint"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"coffeelint",
+				"Coffee: Lint"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"in",
+				"Package Control: Install Package"
+			],
+			[
+				"emm",
+				"Emmet: Increment Number by 0.1"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"coff",
+				"Coffee: Lint"
+			],
+			[
+				"coffee",
+				"Coffee: Toggle Watch Mode"
+			],
+			[
+				"coffe",
+				"Coffee: Lint"
+			],
+			[
+				"cofee",
+				"Coffee: Check Syntax"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"pacakge",
+				"Package Control: Remove Package"
+			],
+			[
+				"package",
+				"Package Control: Install Package"
+			],
+			[
+				"",
+				"Set Syntax: Groovy"
+			],
+			[
+				"view",
+				"View: Toggle Tabs"
+			],
+			[
+				"w",
+				"View: Toggle Tabs"
+			]
+		],
+		"width": 530.0
+	},
+	"console":
+	{
+		"height": 153.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/frankie/Documents/Websites/json-interfaces"
+	],
+	"file_history":
+	[
+		"/Users/frankie/RubymineProjects/json-interfaces/src/templates/address.jade",
+		"/Users/frankie/RubymineProjects/json-interfaces/src/templates/email-field.jade",
+		"/Users/frankie/RubymineProjects/json-interfaces/.gitignore",
+		"/Users/frankie/Documents/Websites/clients/cruhs/client/ng/app.coffee",
+		"/Users/frankie/Documents/Websites/clients/cruhs/infrastructure/roles.coffee",
+		"/Users/frankie/Documents/Websites/clients/cruhs/app/helpers/controller-action-routing.coffee",
+		"/Users/frankie/Documents/Websites/clients/cruhs/app/routes/routes.coffee",
+		"/Users/frankie/Documents/Websites/clients/cruhs/package.json",
+		"/Users/frankie/Documents/Websites/clients/cruhs/infrastructure/init-tfn.coffee",
+		"/Users/frankie/Documents/Websites/clients/cruhs/client/ng/email-templates/forms/email-template-form.coffee",
+		"/Users/frankie/Documents/Websites/clients/cruhs/client/templates/email-templates/form.jade",
+		"/Users/frankie/Documents/Websites/clients/cruhs/client/ng/email-templates/module.coffee",
+		"/Users/frankie/Documents/Websites/clients/cruhs/client/ng/users/module.coffee",
+		"/Users/frankie/Documents/Websites/clients/cruhs/app/controllers/users-controller.coffee",
+		"/Users/frankie/Documents/Websites/clients/cruhs/app/models/user.coffee",
+		"/Users/frankie/Documents/Websites/clients/cruhs/node_modules/gulp-protractor/node_modules/protractor/node_modules/selenium-webdriver/docs/module_selenium-webdriver_error.html",
+		"/Users/frankie/Documents/Websites/clients/cruhs/client/ng/dashboard/module.coffee",
+		"/Users/frankie/Documents/Websites/clients/cruhs/client/ng/auth/module.coffee",
+		"/Users/frankie/Documents/Websites/clients/cruhs/.idea/modules.xml",
+		"/Users/frankie/Documents/Websites/clients/cruhs/node_modules/gulp/node_modules/vinyl-fs/node_modules/graceful-fs/test/max-open.js",
+		"/Users/frankie/Documents/Websites/clients/cruhs/.idea/misc.xml",
+		"/Users/frankie/Documents/Websites/clients/cruhs/client/templates/email-templates/index.jade",
+		"/Users/frankie/Documents/Websites/clients/cruhs/client/templates/messages/index.jade",
+		"/Users/frankie/Documents/Websites/clients/cruhs/node_modules/mocha/node_modules/jade/testing/index.jade",
+		"/Users/frankie/Documents/Websites/clients/cruhs/node_modules/gulp-mocha/node_modules/mocha/node_modules/jade/testing/index.jade",
+		"/Users/frankie/Documents/Websites/clients/cruhs/app/views/index.jade",
+		"/Users/frankie/Documents/Websites/clients/cruhs/app/routes/index.coffee",
+		"/Users/frankie/Documents/Websites/clients/cruhs/client/components/animate.css/source/fading_entrances/fadeInDown.css",
+		"/Users/frankie/Documents/Websites/clients/cruhs/node_modules/gulp-util/lib/isNull.js",
+		"/Users/frankie/Documents/Websites/clients/cruhs/client/ng/mmenu/initializers/load-menu-data.coffee",
+		"/Users/frankie/Documents/Websites/clients/cruhs/client/ng/email-templates/controllers/email-templates-index-ctrl.coffee",
+		"/Users/frankie/Documents/Websites/clients/cruhs/client/components/animate.css/source/rotating_exits/rotateOutUpLeft.css",
+		"/Users/frankie/Documents/Websites/clients/cruhs/client/ng/auth/services/auth.coffee",
+		"/Users/frankie/Documents/Websites/clients/cruhs/client/ng/auth/directives/auth.coffee",
+		"/Users/frankie/Documents/Websites/clients/cruhs/app/models/email-template.coffee",
+		"/Users/frankie/Documents/Websites/clients/cruhs/node_modules/truefalsenull/spec/tfn-spec.js",
+		"/Users/frankie/Documents/Websites/clients/cruhs/node_modules/truefalsenull/src/tfn.js",
+		"/Users/frankie/Documents/Websites/clients/cruhs/.sass-cache/158a4862a0eadf36097a5d74cc4fb079ec449609/_tab-focus.scssc",
+		"/Users/frankie/Documents/Websites/clients/cruhs/app/controllers/threads-controller.coffee",
+		"/Users/frankie/Documents/Websites/clients/cruhs/client/ng/email-templates/services/email-templates.coffee",
+		"/Users/frankie/Documents/Websites/clients/cruhs/app/controllers/email-templates-controller.coffee",
+		"/Users/frankie/Documents/Websites/clients/cruhs/app/controllers/controller.coffee",
+		"/Users/frankie/Documents/Websites/clients/cruhs/app/controllers/restful-controller.coffee",
+		"/Users/frankie/Documents/Websites/clients/cruhs/app/controllers/workflows-controller.coffee",
+		"/Users/frankie/Documents/Websites/clients/cruhs/app/models/thread.coffee",
+		"/Users/frankie/Documents/Websites/clients/cruhs/client/ng/volunteer-application/controllers/volunteer-application-ctrl.coffee",
+		"/Users/frankie/Documents/Websites/clients/cruhs/app/models/workflow.coffee",
+		"/Users/frankie/Documents/Websites/clients/cruhs/.idea/workspace.xml",
+		"/Users/frankie/Documents/Websites/clients/cruhs/bin/www",
+		"/Users/frankie/Documents/Websites/clients/cruhs/client/ng/dashboard/controllers/dashboard-ctrl.coffee",
+		"/Users/frankie/Documents/Websites/clients/cruhs/client/ng/json-interfaces/elements/autocomplete.coffee",
+		"/Users/frankie/Documents/Websites/clients/cruhs/client/ng/volunteer-application/controllers/volunteer-application-start-ctrl.coffee",
+		"/Users/frankie/Documents/Websites/clients/cruhs/client/templates/tasks/list.jade",
+		"/Users/frankie/Documents/Websites/clients/cruhs/client/templates/dashboard/dashboard.jade",
+		"/Users/frankie/Documents/Websites/clients/cruhs/client/ng/messages/forms/send-message.coffee",
+		"/Users/frankie/Documents/Websites/clients/cruhs/infrastructure/init-passport.coffee",
+		"/Users/frankie/Documents/Websites/clients/cruhs/config/default.json",
+		"/Users/frankie/Documents/Websites/clients/cruhs/tasks/message.coffee",
+		"/Users/frankie/Documents/Websites/clients/cruhs/infrastructure/mandrill-client.coffee",
+		"/Users/frankie/Documents/Websites/clients/cruhs/app.coffee",
+		"/Users/frankie/Documents/Websites/clients/cruhs/client/sass/_messages.scss",
+		"/Users/frankie/Documents/Websites/clients/cruhs/deploy",
+		"/Users/frankie/Documents/Websites/clients/cruhs/client/templates/messages/create.jade",
+		"/Users/frankie/Documents/Websites/clients/cruhs/client/templates/messages/message.jade",
+		"/Users/frankie/Documents/Websites/clients/cruhs/node_modules/pg/test/test-helper.js",
+		"/Users/frankie/Documents/Websites/clients/cruhs/config/test.json",
+		"/Users/frankie/Documents/Websites/clients/cruhs/client/ng/messages/services/messages.coffee",
+		"/Users/frankie/Documents/Websites/clients/cruhs/client/templates/elements/autocomplete.jade",
+		"/Users/frankie/Documents/Websites/clients/cruhs/client/templates/messages/sidebar.jade",
+		"/Users/frankie/Documents/Websites/clients/cruhs/client/ng/messages/controllers/messages-create-ctrl.coffee",
+		"/Users/frankie/Documents/Websites/clients/cruhs/client/ng/users/forms/user-form.coffee",
+		"/Users/frankie/Documents/Websites/clients/cruhs/client/ng/messages/services/messages-ui.coffee",
+		"/Users/frankie/Documents/Websites/clients/cruhs/client/ng/users/forms/login-form.coffee",
+		"/Users/frankie/Documents/Websites/clients/cruhs/client/ng/messages/controllers/messages-message-ctrl.coffee",
+		"/Users/frankie/Documents/Websites/clients/cruhs/client/components/animate.css/source/specials/rollOut.css",
+		"/Users/frankie/Documents/Websites/clients/cruhs/client/ng/messages/controllers/messages-sidebar-ctrl.coffee",
+		"/Users/frankie/Documents/Websites/clients/cruhs/client/sass/main.scss",
+		"/Users/frankie/Documents/Websites/clients/cruhs/app/controllers/authorize-controller.coffee",
+		"/Users/frankie/Documents/Websites/clients/cruhs/coffeelint.json",
+		"/Users/frankie/Library/Application Support/Sublime Text 3/Packages/User/SublimeLinter.sublime-settings",
+		"/Users/frankie/Library/Application Support/Sublime Text 3/Packages/User/CoffeeScript.sublime-settings",
+		"/Users/frankie/Library/Application Support/Sublime Text 3/Packages/User/Default (OSX).sublime-keymap",
+		"/Users/frankie/Documents/Websites/clients/cruhs/tasks/scripts-build.coffee",
+		"/Users/frankie/Documents/Websites/clients/cruhs/public/js/main.js",
+		"/Users/frankie/Documents/Websites/clients/cruhs/spec/factories/factory.coffee",
+		"/Users/frankie/Documents/Websites/clients/cruhs/spec/models/thread-spec.coffee",
+		"/Users/frankie/Library/Application Support/Sublime Text 3/Packages/SublimeLinter/SublimeLinter.sublime-settings",
+		"/Users/frankie/Documents/Websites/clients/cruhs/app/controllers/schools-controller.coffee",
+		"/Users/frankie/Documents/Websites/clients/cruhs/tasks/scripts-coffee.coffee",
+		"/Users/frankie/Documents/Websites/clients/cruhs/tasks/scripts-clean.coffee",
+		"/Users/frankie/Documents/Websites/clients/cruhs/app/models/school.coffee",
+		"/Users/frankie/Documents/Websites/clients/cruhs/spec/models/user-spec.coffee",
+		"/Users/frankie/Documents/Websites/clients/cruhs/spec/factories/user.coffee",
+		"/Users/frankie/Documents/Websites/clients/cruhs/spec/factories/thread.coffee",
+		"/Users/frankie/Documents/Websites/clients/cruhs/spec/factories/workflow.coffee",
+		"/Users/frankie/Documents/Websites/clients/cruhs/tasks/default.coffee",
+		"/Users/frankie/Documents/Websites/clients/cruhs/app/controllers/forms-controller.coffee",
+		"/var/folders/ns/w8951dtn47j3mgfk4jh7rh2h0000gn/T/forms-controller.js",
+		"/Users/frankie/Library/Application Support/Sublime Text 3/Packages/Better CoffeeScript/CoffeeScript.sublime-settings",
+		"/Users/frankie/Documents/Websites/clients/cruhs/client/templates/shared/layout.jade",
+		"/Users/frankie/Documents/Websites/clients/cruhs/client/ng/users/services/schools.coffee",
+		"/Users/frankie/Documents/Websites/clients/cruhs/client/ng/users/services/users.coffee",
+		"/Users/frankie/Documents/Websites/clients/cruhs/client/ng/users/services/colleges.coffee",
+		"/Users/frankie/Documents/Websites/clients/cruhs/client/ng/users/controllers/sign-up-ctrl.coffee",
+		"/Users/frankie/Documents/Websites/clients/cruhs/client/ng/users/initializers/login-logout.coffee",
+		"/Users/frankie/Documents/Websites/clients/cruhs/client/templates/login/login.jade",
+		"/Users/frankie/Documents/Websites/clients/cruhs/client/templates/users/sign-up.jade",
+		"/Users/frankie/Documents/Websites/clients/cruhs/spec/protractor/login-spec.coffee",
+		"/Users/frankie/Documents/Websites/clients/cruhs/client/ng/users/forms/sign-up-form.coffee",
+		"/Users/frankie/Documents/Websites/clients/cruhs/client/ng/json-interfaces/services/json-interfaces-config.coffee",
+		"/Users/frankie/Documents/Websites/clients/cruhs/client/ng/users/controllers/login-ctrl.coffee",
+		"/Users/frankie/Documents/Websites/clients/cruhs/client/ng/users/controllers/user-edit-ctrl.coffee",
+		"/Users/frankie/Documents/Websites/clients/cruhs/tasks/create-test-user.coffee",
+		"/Users/frankie/Documents/Websites/clients/cruhs/tasks/styles-build.coffee",
+		"/Users/frankie/Documents/Websites/clients/cruhs/tasks/assets-build.coffee",
+		"/Users/frankie/Documents/Websites/clients/cruhs/spec/protractor/settings.js",
+		"/Users/frankie/Documents/Websites/clients/cruhs/spec/protractor/conf.js",
+		"/Users/frankie/Documents/Websites/clients/cruhs/.jshintrc",
+		"/Users/frankie/Documents/Websites/clients/cruhs/tasks/protractor.coffee",
+		"/Users/frankie/Documents/Websites/clients/cruhs/tasks/webserver-standalone.coffee",
+		"/Users/frankie/Documents/Websites/clients/cruhs/tasks/helpers/handle-error.coffee",
+		"/Users/frankie/Documents/Websites/clients/cruhs/nodemon.json",
+		"/Users/frankie/Documents/Websites/clients/cruhs/gulpfile.coffee",
+		"/Users/frankie/Documents/Websites/clients/cruhs/tasks/migrate-generate-model.coffee",
+		"/Users/frankie/Documents/Websites/clients/cruhs/tasks/helpers/migrate-table-pg.coffee",
+		"/Users/frankie/Documents/Websites/clients/cruhs/tasks/create-tasks.coffee",
+		"/Users/frankie/Documents/Websites/clients/cruhs/tasks/kuetest.coffee",
+		"/Users/frankie/Documents/Websites/clients/cruhs/tasks/start-workflow.coffee"
+	],
+	"find":
+	{
+		"height": 27.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+			"/Users/frankie/Documents/Websites/clients/cruhs/app/controllers",
+			"/Users/frankie/Documents/Websites/clients/cruhs/infrastructure",
+			"/Users/frankie/Documents/Websites/clients/cruhs/app/models",
+			"/Users/frankie/Documents/Websites/clients/cruhs/app/controllers",
+			"/Users/frankie/Documents/Websites/clients/cruhs",
+			"/Users/frankie/Documents/Websites/clients/cruhs/infrastructure",
+			"/Users/frankie/Documents/Websites/clients/cruhs/app/models",
+			"/Users/frankie/Documents/Websites/clients/cruhs/app",
+			"/Users/frankie/Documents/Websites/clients/cruhs/client/ng",
+			"/Users/frankie/Documents/Websites/clients/cruhs/client",
+			"/Users/frankie/Documents/Websites/clients/cruhs/tasks"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+			"\"",
+			"init:",
+			"init",
+			"serialize(",
+			"\"",
+			".send",
+			"console",
+			"console.log",
+			"console",
+			"console.log",
+			"console",
+			"theResource",
+			"console",
+			"\"",
+			"Authorize-controller",
+			"\"",
+			"auto",
+			"\"",
+			"@authMeta(",
+			"authMeta",
+			"\"",
+			"no_unnecessary_double_quotes",
+			"fat",
+			"authMeta",
+			"console.log",
+			"TFN",
+			"'",
+			"number",
+			"console",
+			"login",
+			"regis",
+			"'",
+			"mongoose",
+			"snakeToCamel",
+			"mongoType",
+			"white",
+			"whitesp",
+			":",
+			"watch",
+			"gzip",
+			"'",
+			"provider",
+			"facebook",
+			"console",
+			"username",
+			"debug"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"'",
+			"\""
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 27.0
+	},
+	"input":
+	{
+		"height": 35.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 124.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"project": "json-interfaces.sublime-project",
+	"replace":
+	{
+		"height": 50.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"route",
+				"app/routes/routes.coffee"
+			],
+			[
+				"users/modu",
+				"client/ng/users/module.coffee"
+			],
+			[
+				"module",
+				"client/ng/email-templates/module.coffee"
+			],
+			[
+				"index.jade",
+				"client/templates/email-templates/index.jade"
+			],
+			[
+				"role",
+				"infrastructure/roles.coffee"
+			],
+			[
+				"tfn",
+				"infrastructure/init-tfn.coffee"
+			],
+			[
+				"workflo",
+				"app/models/workflow.coffee"
+			],
+			[
+				"threadco",
+				"app/controllers/threads-controller.coffee"
+			],
+			[
+				"sccon",
+				"app/controllers/schools-controller.coffee"
+			],
+			[
+				"user",
+				"app/models/user.coffee"
+			],
+			[
+				"school",
+				"app/models/school.coffee"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 301.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
