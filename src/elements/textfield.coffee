@@ -9,3 +9,11 @@ class JsonInterfaces.elements.Textfield extends JsonInterfaces.elements.ScalarEl
 
   input: ->
     $('input', @options.$el)
+
+  afterRender: ->
+    super
+    @options.$el.addClass(@options.classes)
+
+    if @options.instantChange
+      @input().on 'keyup', (e)=>
+        @set $(e.currentTarget).val()

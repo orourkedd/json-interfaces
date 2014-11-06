@@ -29,7 +29,8 @@
         name: "demo1",
         $el: $("#demo1"),
         label: "Demo Textfield",
-        help: "This is a sample help block"
+        help: "This is a sample help block",
+        classes: "one two three"
       })
 
       textfield.on("change", function(event, value){
@@ -114,7 +115,7 @@
       var memo3 = new JsonInterfaces.elements.Textarea({
         name: "memo",
         label: "Memo",
-        classes: "one two three",
+        instantChange: true,
         validators: [
           function(value, parentElement, done){
             if(value) {
@@ -142,6 +143,11 @@
 
       collection3.on("submit", function(event, value){
         console.log("Demo 3 Submit");
+        console.log(value);
+      });
+
+      collection3.on("change", function(event, value){
+        console.log("Demo 3 Change");
         console.log(value);
       });
 

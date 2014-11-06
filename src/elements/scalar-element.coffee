@@ -88,7 +88,10 @@ class JsonInterfaces.elements.ScalarElement extends JsonInterfaces.elements.Base
     template = if typeof @options.template is "function" then @options.template() else @options.template
     @options.$el.html(template)
     @bindRivets()
-    @afterRender() if typeof @afterRender is "function"
+    @afterRender()
+
+  afterRender: ->
+    @conditionMet() unless @options.parentElement
 
   bindRivets: ->
     @view = rivets.bind(@options.$el, {
