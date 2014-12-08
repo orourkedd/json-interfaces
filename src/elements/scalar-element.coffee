@@ -19,6 +19,9 @@ class JsonInterfaces.elements.ScalarElement extends JsonInterfaces.elements.Base
     $(@).on "change", =>
       @validate() if @errors.length > 0
 
+  clear: ->
+    @set @defaultValue()
+
   submit: ->
     if @options.parentElement
       $(@).triggerHandler "submit", [@get()]

@@ -193,6 +193,13 @@ class JsonInterfaces.elements.CollectionElement extends JsonInterfaces.elements.
     super()
     @errorsKeyed = {}
 
+  clear: ->
+
+    for element in @elements
+      element.clear() if element.clear
+      if @value[element.getName()] isnt undefined
+        @value[element.getName()] = element.getValue() if element.getValue
+
   validate: (done)->
     @conditionMet (result)=>
       return if result is false
