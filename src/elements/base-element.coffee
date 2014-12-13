@@ -17,6 +17,9 @@ class JsonInterfaces.elements.BaseElement
       @show = result
       done(result)
 
+  forView: (keypath)->
+    @get(keypath)
+
   on: (eventName, cb)->
     $(@).on eventName, cb
 
