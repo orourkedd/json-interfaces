@@ -16,7 +16,7 @@ class JsonInterfaces.elements.ScalarElement extends JsonInterfaces.elements.Base
         validate: false
 
     #revalidate on change if errors are present
-    $(@).on "change", =>
+    $(@).on 'change', =>
       @validate() if @errors.length > 0
 
   clear: ->
@@ -24,19 +24,19 @@ class JsonInterfaces.elements.ScalarElement extends JsonInterfaces.elements.Base
 
   submit: ->
     if @options.parentElement
-      $(@).triggerHandler "submit", [@get()]
+      $(@).triggerHandler 'submit', [@get()]
     else
       @validate (errors)=>
-        $(@).triggerHandler("submit", [@get()]) if errors.length is 0
+        $(@).triggerHandler('submit', [@get()]) if errors.length is 0
 
   defaultValue: ->
     @options.defaultValue || ''
 
   # The following are are valid ways to set the value for this element:
   # element.set((null|undefined|false|falseyValue))
-  # element.set("someval")
-  # element.set("value", "someval")
-  # element.set({value: "someval"})
+  # element.set('someval')
+  # element.set('value', 'someval')
+  # element.set({value: 'someval'})
   set: (keypath, value, options = {})->
     value = @normalizeValueForSet(keypath, value)
 
@@ -54,21 +54,21 @@ class JsonInterfaces.elements.ScalarElement extends JsonInterfaces.elements.Base
     changed = false
     for i,v of @value
       continue if existingValue[i] is @value[i]
-      $(@).trigger("change:" + i, [@value[i]]) if options.events
+      $(@).trigger('change:' + i, [@value[i]]) if options.events
       changed = true unless changed
 
     #trigger change event if any properties have changed
-    $(@).trigger("change", [@get()]) if changed and options.events
+    $(@).trigger('change', [@get()]) if changed and options.events
 
     #validate it
     @validate() unless options.validate
 
   normalizeValueForSet: (keypath, value)->
-    # For: element.set({value: "someval"})
+    # For: element.set({value: 'someval'})
     return keypath if $.isPlainObject(keypath)
 
     #kaypath is specific
-    if keypath and typeof value is not "undefined"
+    if keypath and typeof value is not 'undefined'
       obj = {}
       obj.keypath = value
       return obj
@@ -88,7 +88,7 @@ class JsonInterfaces.elements.ScalarElement extends JsonInterfaces.elements.Base
     @options.$el = $el if $el
 
     #get template from function if provided
-    template = if typeof @options.template is "function" then @options.template() else @options.template
+    template = if typeof @options.template is 'function' then @options.template() else @options.template
     @options.$el.html(template)
     @bindRivets()
     @afterRender()
@@ -133,21 +133,15 @@ class JsonInterfaces.elements.ScalarElement extends JsonInterfaces.elements.Base
         for result in results
           @errors = @errors.concat(result)
 
-        $(@).triggerHandler "errors", [@errors || []]
+        $(@).triggerHandler 'errors', [@errors || []]
         callback.call(@, @errors)
     else
-      $(@).triggerHandler "errors", [[]]
+      $(@).triggerHandler 'errors', [[]]
       callback.call(@, [])
 
   validate: (done)->
     @conditionMet (result)=>
       return unless result
       @getErrors (errors)=>
-        $(@).triggerHandler "validate", [errors || []]
-        done(errors) if typeof done is "function"
-
-  getElName: ->
-    @options.name
-
-  getElId: ->
-    @options.id || @getElName()
+        $(@).triggerHandler 'validate', [errors || []]
+        done(errors) if typeof done is 'function'

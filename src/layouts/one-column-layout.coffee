@@ -4,14 +4,16 @@ class JsonInterfaces.layouts.OneColumnLayout
     @options = options
     throw new Error('fields required') unless @options.element.getElements()
     @elements = @options.element.getElements()
-    @options.template = JsonInterfaces.templates.oneColumnLayout unless @options.template
+
+    if @options.element.isTop()
+      @options.template = JsonInterfaces.templates.oneColumnLayout unless @options.template
+    else
+      @options.template = JsonInterfaces.templates.oneColumnLayoutParent unless @options.template
+
     @errors = []
 
   elementsEl: ->
-    $("> form.one-column-layout > .elements", @options.$el)
-
-  errorsEl: ->
-    $("> form.one-column-layout > .errors", @options.$el)
+    $('.one-column-layout > .elements', @options.$el)
 
   clearErrors: ->
     @errors = []
@@ -20,12 +22,9 @@ class JsonInterfaces.layouts.OneColumnLayout
     @errors.push message
 
   render: ($el)->
-    #@options.element.on "validate", (event, errors)=>
-      #@errors = errors
-
     @options.$el = $el if $el
     throw new Error('@options.$el not set') unless @options.$el
-    template = if typeof @options.template is "function" then @options.template() else @options.template
+    template = if typeof @options.template is 'function' then @options.template() else @options.template
     @options.$el.html(template)
 
     @view = rivets.bind(@options.$el, {
@@ -37,9 +36,10 @@ class JsonInterfaces.layouts.OneColumnLayout
       $el = $('<div></div>').appendTo(@elementsEl())
       element.render($el)
 
-    $("form.one-column-layout", @options.$el).on "submit", (e)=>
-      e.preventDefault()
-      @options.element.submit()
+    if @options.element.isTop()
+      $('.one-column-layout', @options.$el).on 'submit', (e)=>
+        e.preventDefault()
+        @options.element.submit()
 
   close: ->
     @view.unbind() if @view

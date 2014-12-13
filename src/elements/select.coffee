@@ -15,7 +15,7 @@ class JsonInterfaces.elements.Select extends JsonInterfaces.elements.ScalarEleme
 
     super options
 
-    $(@).on "errors", (event, errors)=>
+    $(@).on 'errors', (event, errors)=>
       if errors.length
         @select().addClass('error')
       else
@@ -39,7 +39,7 @@ class JsonInterfaces.elements.Select extends JsonInterfaces.elements.ScalarEleme
     return options if $.isArray(options)
     processed = []
 
-    if typeof options is "string"
+    if typeof options is 'string'
       sets = options.split(',')
       for set in sets
         [label,value] = set.split(':')
@@ -54,3 +54,9 @@ class JsonInterfaces.elements.Select extends JsonInterfaces.elements.ScalarEleme
         value: value
 
     processed
+
+  #Make all values for select elements string
+  normalizeValueForSet: (keypath, value)->
+    r = super(keypath, value)
+    r.value = r?.value?.toString()
+    r

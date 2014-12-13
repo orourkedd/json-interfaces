@@ -1,0 +1,1 @@
+JsonInterfaces.templates.oneColumnLayoutParent = '<div class="one-column-layout"><div class="elements"></div></div>'

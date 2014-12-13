@@ -24,11 +24,14 @@ class JsonInterfaces.elements.CollectionElement extends JsonInterfaces.elements.
         updateAll: true
         events: false
 
-    $(@).triggerHandler "initialized"
+    $(@).triggerHandler 'initialized'
+
+  isTop: ->
+    !@options.parentElement
 
   addElements: (elements)->
     for element in elements
-      throw new Error("Invalid Element: " + element) unless element
+      throw new Error('Invalid Element: ' + element) unless element
       @addElement(element)
 
   addElement: (element)->
@@ -42,41 +45,41 @@ class JsonInterfaces.elements.CollectionElement extends JsonInterfaces.elements.
     @getInitialValueFromElement(element) unless element.noValue
 
     #Submit listener
-    element.on "submit", =>
+    element.on 'submit', =>
       @submit()
 
     #listen for validation, mostly for smart error message updating (ie not having to revalidate the entire form when
     #a single field changes)
-    element.on "validate", (event, errors)=>
+    element.on 'validate', (event, errors)=>
       @errorsKeyed[element.getName()] = errors
       @errors = @createErrorArray(@errorsKeyed)
-      $(@).triggerHandler("validate", [@errors || [], @errorsKeyed || {}])
+      $(@).triggerHandler('validate', [@errors || [], @errorsKeyed || {}])
 
     #update value of element change
     unless element.noValue
-      element.on "change", (event, value)=>
+      element.on 'change', (event, value)=>
         return if @ignoreElementChangeEvents
         @set element.getName(), value
 
     #trigger elementAdded event for the layout or any other listening object
-    $(@).triggerHandler "elementAdded", [element]
+    $(@).triggerHandler 'elementAdded', [element]
 
   getInitialValueFromElement: (element)->
     @value[element.getName()] = element.valueOrDefault()
 
   submit: ->
     if @options.parentElement
-      $(@).triggerHandler "submit"
+      $(@).triggerHandler 'submit'
     else
       @validate (errors)=>
-        $(@).triggerHandler("submit", [@value]) if errors.length is 0
+        $(@).triggerHandler('submit', [@value]) if errors.length is 0
 
   defaultValue: ->
     @options.defaultValue || {}
 
   # The following are are valid ways to set the value for this element:
-  # element.set("key", "value")
-  # element.set({key: "value"})
+  # element.set('key', 'value')
+  # element.set({key: 'value'})
   set: (keypath, value, options = {})->
     options = $.extend
       updateAll: false
@@ -86,14 +89,14 @@ class JsonInterfaces.elements.CollectionElement extends JsonInterfaces.elements.
     throw new Error('At least 1 argument required') unless keypath
 
     #Make sure that an object is being passed in for the value
-    throw new Error('value must be an object') if typeof value is "undefined" and !$.isPlainObject(keypath)
+    throw new Error('value must be an object') if typeof value is 'undefined' and !$.isPlainObject(keypath)
 
-    # For: element.set(keypath, "someval")
+    # For: element.set(keypath, 'someval')
     # this could be used to set other values on @value.  Could be used for something.
     # keypath is defined, value is defined
-    return @setKeyPath(keypath, value, options) unless typeof value is "undefined"
+    return @setKeyPath(keypath, value, options) unless typeof value is 'undefined'
 
-    # For: element.set({value: "someval"})
+    # For: element.set({value: 'someval'})
     value = keypath
 
     existingValue = $.extend(true, {}, @value)
@@ -114,12 +117,12 @@ class JsonInterfaces.elements.CollectionElement extends JsonInterfaces.elements.
         #if this value has changed, set it on the element
         @setValueOnElement(i, v)
 
-        $(@).trigger("change:" + i, [v, element]) if options.events
+        $(@).trigger('change:' + i, [v, element]) if options.events
 
     @ignoreElementChangeEvents = false
 
     #trigger change event if any properties have changed
-    $(@).trigger("change", [@value]) if changed and options.events
+    $(@).trigger('change', [@value]) if changed and options.events
 
   setKeyPath: (keypath, value, options = {})->
     obj = {}
@@ -144,7 +147,7 @@ class JsonInterfaces.elements.CollectionElement extends JsonInterfaces.elements.
 
   render: ($el)->
     @options.$el = $el if $el
-    template = if typeof @options.template is "function" then @options.template() else @options.template
+    template = if typeof @options.template is 'function' then @options.template() else @options.template
     @layout = new @options.layout
       element: @
       template: template
@@ -161,7 +164,7 @@ class JsonInterfaces.elements.CollectionElement extends JsonInterfaces.elements.
       continue if element.noValue
       validators.push ((element)->
         (callback)->
-          #do not run validation if this element is "disabled" via its conditional
+          #do not run validation if this element is 'disabled' via its conditional
           element.conditionMet (result)->
             keyed = {}
             keyed[element.getName()] = null
@@ -204,5 +207,5 @@ class JsonInterfaces.elements.CollectionElement extends JsonInterfaces.elements.
     @conditionMet (result)=>
       return if result is false
       @getErrors =>
-        $(@).triggerHandler("validate", [@errors || [], @errorsKeyed || {}])
-        done.call(@, @errors) if typeof done is "function"
+        $(@).triggerHandler('validate', [@errors || [], @errorsKeyed || {}])
+        done.call(@, @errors) if typeof done is 'function'

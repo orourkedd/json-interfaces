@@ -26,12 +26,12 @@ class JsonInterfaces.Factory
         if $.isPlainObject(config) #normal json config object
           config.name = name
           elements.push @buildElement(config)
-        else if typeof config is "string"
+        else if typeof config is 'string'
           config =
             name: name
             type: @getType(config)
           elements.push @buildElement(config)
-        else if typeof config is "function" #when a constructor function is passed in
+        else if typeof config is 'function' #when a constructor function is passed in
           elementClass = config
           config =
             name: name
@@ -58,7 +58,7 @@ class JsonInterfaces.Factory
   @processValidators: (options)->
     validators = []
     #normalize validation to an array
-    if typeof options.validators is "function"
+    if typeof options.validators is 'function'
       validators = [options.validators]
     else if not options.validators
       validators = []
@@ -66,17 +66,17 @@ class JsonInterfaces.Factory
     return validators unless options.required
 
     #set up some shorthand for required: true
-    message = if options.required is true then (options.label || "This field") + " is required." else options.required
+    message = if options.required is true then (options.label || 'This field') + ' is required.' else options.required
     #validation with conditionals
 
     validators.push (value, parentElement, done)=>
-      done(message if (value is "" or value is null or value is undefined))
+      done(message if (value is '' or value is null or value is undefined))
 
     validators
 
   @processCondition: (condition = false)->
     return condition unless condition
-    return condition if typeof condition is "function"
+    return condition if typeof condition is 'function'
 
     if $.isPlainObject(condition)
       for name,checkValue of condition
@@ -87,5 +87,5 @@ class JsonInterfaces.Factory
     false
 
   @getType: (type)->
-    return JsonInterfaces.elements[type] if typeof type is "string" and JsonInterfaces.elements[type]
+    return JsonInterfaces.elements[type] if typeof type is 'string' and JsonInterfaces.elements[type]
     type || JsonInterfaces.elements.Textfield

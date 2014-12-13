@@ -33,12 +33,43 @@ class JsonInterfaces.elements.BaseElement
     @options.parentElement = parent
 
     #check the condition of the everything is setup
-    parent.on "initialized", =>
+    parent.on 'initialized', =>
       @conditionMet()
 
     #check the condition after the parent has changed
-    parent.on "change", =>
+    parent.on 'change', =>
       @conditionMet()
 
   getName: ->
     @options.name
+
+  # getElName: ->
+  #   @options.name
+
+  # getElId: ->
+  #   @options.id || @getElName()
+
+  getElName: ->
+    return @options.name unless @options.parentElement
+    namespaced = @options.parentElement.getName() + '[' + @options.name + ']'
+
+    if @options.parentElement and @options.namespace
+      return namespaced
+
+    if @options.parentElement and @options.parentElement.isTop()
+      return @options.name
+
+    return namespaced
+
+  getElId: ->
+    id = @options.id || @options.name
+    return id unless @options.parentElement
+    namespaced = @options.parentElement.getName() + '-' + id
+
+    if @options.parentElement and @options.namespace
+      return namespaced
+
+    if @options.parentElement and @options.parentElement.isTop()
+      return id
+
+    return namespaced

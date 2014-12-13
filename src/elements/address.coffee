@@ -10,18 +10,18 @@ class JsonInterfaces.elements.Address extends JsonInterfaces.elements.Collection
     
     defaults =
       address1:
-        label: "Address"
+        label: 'Address'
         required: options.required
       address2:
-        label: "Address Line 2"
+        label: 'Address Line 2'
       city:
-        label: "City"
+        label: 'City'
         required: options.required
       state:
         type: JsonInterfaces.elements.State
         required: options.required
       zip:
-        label: "Zip"
+        label: 'Zip'
         required: options.required
 
     options = $.extend defaults, elements
