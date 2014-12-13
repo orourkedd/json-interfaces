@@ -37,8 +37,17 @@ class JsonInterfaces.elements.Select extends JsonInterfaces.elements.ScalarEleme
 
   processOptions: (options)->
     return options if $.isArray(options)
-
     processed = []
+
+    if typeof options is "string"
+      sets = options.split(',')
+      for set in sets
+        [label,value] = set.split(':')
+        processed.push
+          label: label
+          value: value
+      return processed
+
     for value, label of options
       processed.push
         label: label

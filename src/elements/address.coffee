@@ -7,10 +7,13 @@ class JsonInterfaces.elements.Address extends JsonInterfaces.elements.Collection
     super options
 
   buildAddressElements: (options, elements = {})->
-    options = $.extend
-      address:
-        label: "Street Address"
+    
+    defaults =
+      address1:
+        label: "Address"
         required: options.required
+      address2:
+        label: "Address Line 2"
       city:
         label: "City"
         required: options.required
@@ -20,6 +23,7 @@ class JsonInterfaces.elements.Address extends JsonInterfaces.elements.Collection
       zip:
         label: "Zip"
         required: options.required
-      , elements
+
+    options = $.extend defaults, elements
 
     JsonInterfaces.Factory.buildElements(options)
