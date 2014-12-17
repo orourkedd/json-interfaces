@@ -81,7 +81,9 @@ class JsonInterfaces.Factory
     if $.isPlainObject(condition)
       for name,checkValue of condition
         return ((value, parentElement, done)->
-          done(parentElement.getElement(name).get() is checkValue)
+          element = parentElement.getElement(name)
+          return done(false) unless element
+          done(element.get() is checkValue)
         )
 
     false
