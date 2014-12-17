@@ -1,26 +1,26 @@
 {
-  "name": "json-interfaces",
-  "version": "0.0.8",
-  "main": "lib/json-interfaces.js",
-  "authors": [
-    "Frankie O'Rourke <frankie@orourkedd.com>"
-  ],
-  "license": "MIT",
-  "ignore": [
-    ".jshintrc",
-    "**/*.txt",
-    ".idea"
-  ],
-  "dependencies": {
-    "rivets": "latest",
-    "jquery": "~1.11",
-    "async": "latest",
-    "validator-js": "latest"
-  },
-  "devDependencies": {
-    "mocha": "latest",
-    "chai": "latest",
-    "bootstrap": "latest",
-    "animate.css": "latest"
-  }
+	"name": "json-interfaces",
+	"version": "0.0.23",
+	"main": "lib/json-interfaces.js",
+	"authors": [
+		"Frankie O'Rourke <frankie@orourkedd.com>"
+	],
+	"license": "MIT",
+	"ignore": [
+		".jshintrc",
+		"**/*.txt",
+		".idea"
+	],
+	"dependencies": {
+		"rivets": "~0.7.1",
+		"jquery": "~1.11",
+		"async": "latest",
+		"validator-js": "latest"
+	},
+	"devDependencies": {
+		"mocha": "latest",
+		"chai": "latest",
+		"bootstrap": "latest",
+		"animate.css": "latest"
+	}
 }

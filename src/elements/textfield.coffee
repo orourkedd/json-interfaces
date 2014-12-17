@@ -4,7 +4,7 @@ class JsonInterfaces.elements.Textfield extends JsonInterfaces.elements.ScalarEl
     options.template = JsonInterfaces.templates.textfield unless options.template
     super options
 
-    $(@).on "errors", (event, errors)=>
+    $(@).on 'errors', (event, errors)=>
       @input()[if errors.length then 'addClass' else 'removeClass']('error')
 
   input: ->
