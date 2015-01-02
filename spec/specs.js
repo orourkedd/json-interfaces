@@ -168,9 +168,9 @@ scalarFactory = function(options) {
   return new JsonInterfaces.elements.ScalarElement(options);
 };
 
-describe("JsonInterfaces.elements.ScalarElement", function() {
-  describe("#render", function() {
-    return it("renders a template into a jquery element", function() {
+describe('JsonInterfaces.elements.ScalarElement', function() {
+  describe('#render', function() {
+    return it('renders a template into a jquery element', function() {
       var div, element;
       element = scalarFactory({
         name: 'e1'
@@ -180,8 +180,8 @@ describe("JsonInterfaces.elements.ScalarElement", function() {
       return expect(div.html()).to.have.string('Frankie');
     });
   });
-  describe("data binding", function() {
-    it("updates the DOM when the value changes", function() {
+  describe('data binding', function() {
+    it('updates the DOM when the value changes', function() {
       var div, element;
       element = scalarFactory({
         name: 'e1'
@@ -189,10 +189,10 @@ describe("JsonInterfaces.elements.ScalarElement", function() {
       div = $('div');
       element.render(div);
       expect(div.html()).to.have.string('Frankie');
-      element.set("Chelsea");
+      element.set('Chelsea');
       return expect(div.html()).to.have.string('Chelsea');
     });
-    it("updates the model when the DOM changes", function() {
+    it('updates the model when the DOM changes', function() {
       var div, element;
       element = scalarFactory({
         name: 'e1',
@@ -200,12 +200,12 @@ describe("JsonInterfaces.elements.ScalarElement", function() {
       });
       div = $('div');
       element.render(div);
-      element.set("Chelsea");
+      element.set('Chelsea');
       expect(element.get()).to.eq('Chelsea');
       $('input', element.options.$el).val('Frankie').trigger('change');
       return expect(element.get()).to.eq('Frankie');
     });
-    return it("binds the element name and id", function() {
+    return it('binds the element name and id', function() {
       var div, element, html;
       element = scalarFactory({
         name: 'e1',
@@ -219,38 +219,38 @@ describe("JsonInterfaces.elements.ScalarElement", function() {
       return expect(html).to.have.string('id="random-id"');
     });
   });
-  return describe("events", function() {
-    it("fires change event for keypath", function(done) {
+  return describe('events', function() {
+    it('fires change event for keypath', function(done) {
       var element;
       element = scalarFactory({
         name: 'e1'
       });
-      element.on("change:value", function() {
+      element.on('change:value', function() {
         return done();
       });
-      return element.set("testing");
+      return element.set('testing');
     });
-    it("fires change event for any change", function(done) {
+    it('fires change event for any change', function(done) {
       var element;
       element = scalarFactory({
         name: 'e1'
       });
-      element.on("change", function() {
+      element.on('change', function() {
         return done();
       });
-      return element.set("testing");
+      return element.set('testing');
     });
-    it("does not fire change when set value is the same", function() {
+    it('does not fire change when set value is the same', function() {
       var element;
       element = scalarFactory({
         name: 'e1'
       });
-      element.on("change", function() {
+      element.on('change', function() {
         throw new Error('This should not be called!');
       });
-      return element.set("Frankie");
+      return element.set('Frankie');
     });
-    return it("fires change event on element object when DOM changes", function(done) {
+    return it('fires change event on element object when DOM changes', function(done) {
       var div, element;
       element = scalarFactory({
         name: 'e1',
@@ -258,9 +258,9 @@ describe("JsonInterfaces.elements.ScalarElement", function() {
       });
       div = $('div');
       element.render(div);
-      element.set("Chelsea");
+      element.set('Chelsea');
       expect(element.get()).to.eq('Chelsea');
-      element.on("change", function() {
+      element.on('change', function() {
         return done();
       });
       $('input', element.options.$el).val('Frankie').trigger('change');

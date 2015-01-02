@@ -1,22 +1,22 @@
 rivets.adapters[':'] =
-  subscribe: (obj, keypath, callback) ->
+  observe: (obj, keypath, callback) ->
     obj.on 'change:' + keypath, callback
 
-  unsubscribe: (obj, keypath, callback) ->
+  unobserve: (obj, keypath, callback) ->
     obj.off 'change:' + keypath, callback
 
-  read: (obj, keypath) ->
+  get: (obj, keypath) ->
     obj.forView keypath
 
-  publish: (obj, keypath, value) ->
+  set: (obj, keypath, value) ->
     obj.setKeyPath keypath, value
 
 rivets.adapters['#'] =
-  subscribe: (obj, keypath, callback) ->
+  observe: (obj, keypath, callback) ->
 
-  unsubscribe: (obj, keypath, callback) ->
+  unobserve: (obj, keypath, callback) ->
 
-  read: (obj, methodName) ->
+  get: (obj, methodName) ->
     obj[methodName]()
 
-  publish: (obj, keypath, value) ->
+  set: (obj, keypath, value) ->

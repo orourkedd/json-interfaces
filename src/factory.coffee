@@ -80,10 +80,13 @@ class JsonInterfaces.Factory
 
     if $.isPlainObject(condition)
       for name,checkValue of condition
+        #no closure because of immediate return
         return ((value, parentElement, done)->
           element = parentElement.getElement(name)
-          return done(false) unless element
-          done(element.get() is checkValue)
+          if element
+            return done(element.get() is checkValue)
+          else
+            return done(parentElement.value[name] is checkValue)
         )
 
     false

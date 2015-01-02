@@ -197,7 +197,6 @@ class JsonInterfaces.elements.CollectionElement extends JsonInterfaces.elements.
     @errorsKeyed = {}
 
   clear: ->
-
     for element in @elements
       element.clear() if element.clear
       if @value[element.getName()] isnt undefined
