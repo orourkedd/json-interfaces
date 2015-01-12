@@ -1,6 +1,6 @@
 {
 	"name": "json-interfaces",
-	"version": "0.0.25",
+	"version": "0.0.26",
 	"main": "lib/json-interfaces.js",
 	"authors": [
 		"Frankie O'Rourke <frankie@orourkedd.com>"
