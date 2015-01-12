@@ -1,7 +1,6 @@
 .form-group(rv-show="element.show")
   label(rv-for="options.name", data-show="options.label") {options.label}
-  p.help-block(data-show="options.help") {options.help}
-
+  p.help-block(data-show="options.help" rv-html="options.help")
   label(class="radio-inline" rv-each-option="options.options")
     input(type="radio" rv-name="element#getElName" rv-value="option.value" rv-checked="element:value")
     span {option.label}

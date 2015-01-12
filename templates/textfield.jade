@@ -1,6 +1,6 @@
 .form-group(rv-show="element.show")
   label(rv-for="options.name", data-show="options.label") {options.label}
-  p.help-block(data-show="options.help") {options.help}
+  p.help-block(data-show="options.help" rv-html="options.help")
   input(type="text" class="form-control" rv-name="element#getElName" rv-id="element#getElId" rv-value="element:value")
   .error-wrapper
     .error(rv-each-error="element.errors" class="alert alert-danger shake animated") {error}
