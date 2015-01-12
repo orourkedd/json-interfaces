@@ -97,10 +97,13 @@ class JsonInterfaces.elements.ScalarElement extends JsonInterfaces.elements.Base
     @conditionMet() unless @options.parentElement
 
   bindRivets: ->
-    @view = rivets.bind(@options.$el, {
-      options: @options
-      element: @
-    })
+    @view = rivets.bind(@options.$el,
+      {
+        options: @options
+        element: @
+      },
+      @options.rivets || {}
+    )
 
   close: ->
     @view.unbind()
