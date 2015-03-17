@@ -11,7 +11,7 @@ class JsonInterfaces.elements.Html extends JsonInterfaces.elements.ScalarElement
     #get template from function if provided
     template = "<div rv-show='element.show'>#{@options.html}</div>"
     @options.$el.html(template)
-    @bindRivets()
+    @bindRivets() unless @options.noBind
     @afterRender()
 
   afterRender: ->

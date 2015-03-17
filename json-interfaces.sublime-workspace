@@ -116,10 +116,10 @@
 	"buffers":
 	[
 		{
-			"file": "src/elements/scalar-element.coffee",
+			"file": "src/elements/html.coffee",
 			"settings":
 			{
-				"buffer_size": 4010,
+				"buffer_size": 634,
 				"line_ending": "Unix"
 			}
 		}
@@ -231,18 +231,20 @@
 		"/Users/frankie/Documents/Websites/json-interfaces",
 		"/Users/frankie/Documents/Websites/json-interfaces/src",
 		"/Users/frankie/Documents/Websites/json-interfaces/src/elements",
-		"/Users/frankie/Documents/Websites/json-interfaces/src/layouts",
-		"/Users/frankie/Documents/Websites/json-interfaces/templates"
+		"/Users/frankie/Documents/Websites/json-interfaces/src/templates"
 	],
 	"file_history":
 	[
+		"/Users/frankie/Documents/Websites/json-interfaces/package.json",
+		"/Users/frankie/Documents/Websites/json-interfaces/src/elements/email.coffee",
+		"/Users/frankie/Documents/Websites/json-interfaces/demo/demo.html",
+		"/Users/frankie/Documents/Websites/json-interfaces/bower.json",
 		"/Users/frankie/Documents/Websites/json-interfaces/templates/textarea.jade",
 		"/Users/frankie/Documents/Websites/json-interfaces/templates/textfield.jade",
 		"/Users/frankie/Documents/Websites/json-interfaces/templates/select.jade",
 		"/Users/frankie/Documents/Websites/json-interfaces/templates/password.jade",
 		"/Users/frankie/Documents/Websites/json-interfaces/templates/email.jade",
 		"/Users/frankie/Documents/Websites/json-interfaces/templates/date.jade",
-		"/Users/frankie/Documents/Websites/json-interfaces/package.json",
 		"/Users/frankie/Documents/Websites/json-interfaces/node_modules/gulp-clean/node_modules/through2/node_modules/readable-stream/node_modules/isarray/component.json",
 		"/Users/frankie/Documents/Websites/json-interfaces/node_modules/gulp-watch/node_modules/path2glob/node_modules/glob/node_modules/graceful-fs/test/readdir-sort.js",
 		"/Users/frankie/Documents/Websites/json-interfaces/node_modules/gulp-mocha-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/http-signature/node_modules/ctype/tst/ctype/tst.readSize.js",
@@ -251,7 +253,6 @@
 		"/Users/frankie/Documents/Websites/json-interfaces/node_modules/gulp-notify/lib/withReporter.js",
 		"/Users/frankie/Documents/Websites/json-interfaces/node_modules/gulp-clean/node_modules/through2/through2.js",
 		"/Users/frankie/Documents/Websites/json-interfaces/bower_components/bootstrap/less/theme.less",
-		"/Users/frankie/Documents/Websites/json-interfaces/bower.json",
 		"/Users/frankie/Documents/Websites/json-interfaces/templates/radio.jade",
 		"/Users/frankie/Documents/Websites/json-interfaces/src/elements/scalar-element.coffee",
 		"/Users/frankie/Documents/Websites/json-interfaces/src/elements/html.coffee",
@@ -276,7 +277,6 @@
 		"/Users/frankie/Library/Application Support/Sublime Text 3/Packages/User/SublimeLinter.sublime-settings",
 		"/Users/frankie/Documents/Websites/json-interfaces/templates/submit.jade",
 		"/Users/frankie/Documents/Websites/json-interfaces/src/elements/submit.coffee",
-		"/Users/frankie/Documents/Websites/json-interfaces/demo/demo.html",
 		"/Users/frankie/Documents/Websites/json-interfaces/src/elements/textarea.coffee",
 		"/Users/frankie/Documents/Websites/json-interfaces/gulpfile.coffee",
 		"/Users/frankie/Documents/Websites/json-interfaces/.gitignore",
@@ -362,8 +362,7 @@
 		"/Users/frankie/Library/Application Support/Sublime Text 3/Packages/User/CoffeeScript.sublime-settings",
 		"/Users/frankie/Library/Application Support/Sublime Text 3/Packages/User/Default (OSX).sublime-keymap",
 		"/Users/frankie/Documents/Websites/clients/cruhs/tasks/scripts-build.coffee",
-		"/Users/frankie/Documents/Websites/clients/cruhs/public/js/main.js",
-		"/Users/frankie/Documents/Websites/clients/cruhs/spec/factories/factory.coffee"
+		"/Users/frankie/Documents/Websites/clients/cruhs/public/js/main.js"
 	],
 	"find":
 	{
@@ -374,6 +373,7 @@
 		"height": 93.0,
 		"where_history":
 		[
+			"/Users/frankie/Documents/Websites/json-interfaces/src/elements",
 			"/Users/frankie/Documents/Websites/json-interfaces",
 			"/Users/frankie/Documents/Websites/json-interfaces/src/elements",
 			"/Users/frankie/Documents/Websites/clients/cruhs/app/controllers",
@@ -394,6 +394,7 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"$",
 			"conditionMet",
 			"condition",
 			"change",
@@ -495,19 +496,19 @@
 			[
 				{
 					"buffer": 0,
-					"file": "src/elements/scalar-element.coffee",
-					"semi_transient": true,
+					"file": "src/elements/html.coffee",
+					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4010,
+						"buffer_size": 634,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								413,
-								413
+								328,
+								328
 							]
 						],
 						"settings":
@@ -515,11 +516,46 @@
 							"BracketHighlighterBusy": false,
 							"bh_regions":
 							[
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
 								"bh_double_quote",
 								"bh_double_quote_center",
 								"bh_double_quote_open",
 								"bh_double_quote_close",
 								"bh_double_quote_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
 								"bh_tag",
 								"bh_tag_center",
 								"bh_tag_open",
@@ -534,42 +570,7 @@
 								"bh_angle_center",
 								"bh_angle_open",
 								"bh_angle_close",
-								"bh_angle_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content"
+								"bh_angle_content"
 							],
 							"syntax": "Packages/Better CoffeeScript/CoffeeScript.tmLanguage",
 							"tab_size": 2,
@@ -587,7 +588,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 27.0
+		"height": 34.0
 	},
 	"input":
 	{
