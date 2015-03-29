@@ -67,13 +67,14 @@ class JsonInterfaces.elements.ScalarElement extends JsonInterfaces.elements.Base
     # For: element.set({value: 'someval'})
     return keypath if $.isPlainObject(keypath)
 
-    #kaypath is specific
-    if keypath and typeof value is not 'undefined'
+    # For: element.set('value', 'myVal')
+    if keypath and 'undefined' is not typeof value
       obj = {}
-      obj.keypath = value
+      obj[keypath] = value
       return obj
 
     # For: element.set((null|undefined|false|falseyValue))
+    # For: element.set('someVal')
     value: keypath
 
   setKeyPath: (keypath, value)->

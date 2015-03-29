@@ -20,7 +20,6 @@ class JsonInterfaces.elements.Select extends JsonInterfaces.elements.ScalarEleme
         @select().addClass('error')
       else
         @select().removeClass('error')
-      #@select()[unless errors then 'addClass' else 'removeClass']('error')
 
   select: ->
     throw new Error('@options.$el is required') unless @options.$el
